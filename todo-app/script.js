@@ -17,4 +17,9 @@ Vue.createApp({
       todoEnter.value = "";
     },
   },
+  created() {
+    fetch("http://localhost:4730/todos")
+      .then((response) => response.json())
+      .then((todoData) => (this.todos = todoData));
+  },
 }).mount("#app");

@@ -23,7 +23,8 @@
 
             <input type="text" id="todoEnter"><button class="addBtn" @click="getNewTodo()">Add</button>
             <ul id="todoList">
-                <li v-for="todo in todos" :key="todos.id"><input class="check" type="checkbox"><label>{{
+                <li v-for="todo in todos" :key="todo.id"><input type="checkbox" :checked="todo.done"
+                        :id="'todo-'+todo.id"><label :for="'todo-'+todo.id">{{
                         todo.description
                         }}</label>
 
